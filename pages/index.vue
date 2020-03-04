@@ -3,35 +3,16 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://lh3.googleusercontent.com/proxy/I0JHIe1VDdAmDJIQYv3jjfxnqI3rWTaXhIFPEKWWALK5thy7uPqaSOsreqcV3QR8UZbbUlbkyUgk702TEsSFrWUtCdXmKEbcT8kHT1IuIBVlkFzrjLU"
-        title="Hello There!"
-        previewText="This is first post!"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="https://lh3.googleusercontent.com/proxy/I0JHIe1VDdAmDJIQYv3jjfxnqI3rWTaXhIFPEKWWALK5thy7uPqaSOsreqcV3QR8UZbbUlbkyUgk702TEsSFrWUtCdXmKEbcT8kHT1IuIBVlkFzrjLU"
-        title="Hello There TWO!"
-        previewText="This is SECOND post!"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="https://lh3.googleusercontent.com/proxy/I0JHIe1VDdAmDJIQYv3jjfxnqI3rWTaXhIFPEKWWALK5thy7uPqaSOsreqcV3QR8UZbbUlbkyUgk702TEsSFrWUtCdXmKEbcT8kHT1IuIBVlkFzrjLU"
-        title="Hello There 333!"
-        previewText="This is ThirD post!"
-      />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 };
 </script>
@@ -44,6 +25,7 @@ export default {
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
+  background-image: url("~assets/images/header-bg.png");
 }
 
 .intro h1 {
@@ -65,14 +47,5 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 </style>
