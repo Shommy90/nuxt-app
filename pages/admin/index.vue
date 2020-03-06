@@ -1,6 +1,9 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
+      <nuxt-link to="/" :style="{ color: 'gray', marginRight: '15px' }"
+        >home</nuxt-link
+      >
       <AppButton @click="$router.push('/admin/new-post')"
         >Create Post</AppButton
       >

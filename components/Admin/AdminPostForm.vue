@@ -2,7 +2,7 @@
   <form @submit.prevent="onSave">
     <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
-    <AppControlInput v-model="editedPost.thumbnailLink"
+    <AppControlInput v-model="editedPost.thumbnail"
       >Thumbnail Link</AppControlInput
     >
     <AppControlInput control-type="textarea" v-model="editedPost.content"
@@ -48,11 +48,7 @@ export default {
   },
   methods: {
     onSave() {
-      console.log(this.editedPost);
-
-      Object.keys(this.editedPost).forEach(key => {
-        this.editedPost[key] = "";
-      });
+      this.$emit("submit", this.editedPost);
     },
     onCancel() {
       this.$router.push("/admin");

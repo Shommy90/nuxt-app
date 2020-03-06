@@ -18,22 +18,20 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: "First Post (ID: " + context.route.params.id + ")",
-          previewText: "This is first post!",
-          author: "Maximilian",
-          updatedDate: new Date(),
-          content: "Some dummy text which is definitely...",
-          thumbnail:
-            "https://c4.wallpaperflare.com/wallpaper/193/203/796/futuristic-tech-geometry-cyan-wallpaper-preview.jpg"
-        }
-      });
-    }, 1000);
+  asyncData(context) {
+    return axios
+      .get(
+        `https://nuxt-blog-92d5e.firebaseio.com/posts/${context.params.id}.json`
+      )
+      .then(res => {
+        return {
+          loadedPost: res.data
+        };
+      })
+      .catch(err => context.error(err));
   }
 };
 </script>

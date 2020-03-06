@@ -7,7 +7,7 @@
       ></div>
       <div class="post-content">
         <h1>{{ title }}</h1>
-        <p>{{ previewText }}</p>
+        <p>{{ content }}</p>
       </div>
     </article>
   </nuxt-link>
@@ -29,7 +29,7 @@ export default {
       type: String,
       required: true
     },
-    previewText: {
+    content: {
       type: String,
       required: true
     },
